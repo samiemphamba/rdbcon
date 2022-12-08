@@ -1,0 +1,20 @@
+default: 
+   dataconnection: 
+     driver: '{ODBC Driver 17 for SQL Server}' 
+     server: 'xx.xx.xx.xx' 
+     uid: 'xxx;' 
+     pwd: 'xxx' 
+     port: "xxx" 
+     db_type: 'SQL' 
+     database: 'xxx'
+
+obj_name: 
+   dataconnection: 
+     driver: 'driver' 
+     server: 'xx.xx.xx.xx' 
+     uid: 'xxx;' 
+     pwd: 'xxx' 
+     port: "xxx" 
+     db_type: 'MySQL' 
+     database: 'xxx'
+
