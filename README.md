@@ -20,8 +20,15 @@
 
 ## Usage
 - Run this command in Rstudio:
-devtools::install_github("samiemphamba/rdbcon")
-rdbcon<-init("file_path","db_object")
+
+    devtools::install_github("samiemphamba/rdbcon")
+
+    devtools::install_github("samiemphamba/rdbcon",dependencies=TRUE,force = TRUE)
+
+    library(rdbcon)
+
+    con <- rdbcon::init(file="Path/db.yaml", db_object="xxx")
+
 
 ## Dependacies:
 - devtools
