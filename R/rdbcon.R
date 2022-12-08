@@ -1,5 +1,3 @@
-# rdbcon
-
 #' Initialize db connection object
 #'
 #' This function uses yaml file to connect to db using necessary packages.
@@ -18,16 +16,31 @@
 #' @param file Path to db config => valid yaml file
 #' @param db_object database object you want to connect to
 #' @return A connection object as con
-
-Usage:
-- Run this command in Rstudio:
-devtools::install_github("samiemphamba/rdbcon")
-
-Dependacies:
-- devtools
-- RODBC,
-- DBI,
-- odbc,
-- yaml,
-- config
-
+#' @export
+init <- function(file,db_object) {
+  config <- config::get(
+    file = file,
+    config = Sys.getenv("R_CONFIG_ACTIVE", db_object)
+  )
+  
+  soap <- config$dataconnection
+  if(soap$db_type == "SQL"){
+    con_string <- paste(
+      'Driver={'
+      ,soap$driver
+      ,'};Server='
+      ,soap$server
+      ,';database='
+      ,soap$database
+      ,';UID='
+      ,soap$uid
+      ,';PWD='
+      ,soap$pwd
+      ,';'
+      ,sep = ""
+    )
+    con <- odbcDriverConnect(connection = con_string)
+  }
+  
+  return (con)
+}
