@@ -16,16 +16,16 @@
 #' @param file Path to db config => valid yaml file
 #' @param db_object database object you want to connect to
 #' @return A connection object as con
+#' 
 #' @export
-#' 
-#' 
 openDb <- function(file,db_object) {
   config <- config::get(
     file = file,
     config = Sys.getenv("R_CONFIG_ACTIVE", db_object)
   )
-  #setwd("E:\\Data Science\\R\\package\\rdbcon\\R")
+
   soap <- config$dataconnection
+  
   if(soap$db_type == "SQL"){
     con_string <- paste(
       'Driver={'
@@ -59,9 +59,16 @@ openDb <- function(file,db_object) {
   return (con)
 }
 
+#' Closes db connection
+#' @param con current db object
+#' @param db_type SQL or MySQL
+#' @export
 closeDb <- function(con, db_type){
   switch(db_type,
        SQL = {odbcClose(con)},
-       MySQL = {dbDisconnect(con)},
+       MySQL = {dbDisconnect(con)}
   )
 }
+
+
+#setwd("E:\\Data Science\\R\\package\\rdbcon\\R")
