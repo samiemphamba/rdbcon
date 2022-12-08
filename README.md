@@ -1,7 +1,7 @@
 # rdbcon
 
 - It initializes db connection object
-- This package uses yaml file to connect to db using relavant packages.
+- This package uses yaml file to connect/close db using relavant packages.
 - It supports these databases:  SQL and MySQL
 
 # yaml structure
@@ -12,9 +12,10 @@
 
     - devtools::install_github("samiemphamba/rdbcon",dependencies=TRUE,force = TRUE)
     - library(rdbcon)
-    - con <- init(file="Path/db.yaml", db_object="xxx")
-    - You may reference to the actual package name when calling init function
-        - con <- rdbcon::init(file="Path/db.yaml", db_object="xxx")
+    - con <- openDb(file="Path/db.yaml", db_object="xxx")
+    - You may reference to the actual package name when calling openDb function
+        - con <- rdbcon::openDb(file="Path/db.yaml", db_object="xxx")
+    - closeDb(con, db_type="SQL")
 
 ## Dependacies:
 - Windows.
@@ -31,5 +32,6 @@
     - odbc,
     - yaml,
     - config
+    - RMariaDB
 
 
