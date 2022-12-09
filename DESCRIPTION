@@ -15,4 +15,5 @@ Depends:
     DBI,
     odbc,
     yaml,
-    config
+    config,
+    safer
