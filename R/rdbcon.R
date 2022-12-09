@@ -81,5 +81,4 @@ closeDb <- function(con, db_type){
 }
 
 
-
 #setwd("E:\\Data Science\\R\\package\\rdbcon\\R")

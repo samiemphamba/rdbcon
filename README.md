@@ -2,7 +2,7 @@
 
 - It initializes db connection object
 - This package uses yaml file to connect/close db using relavant packages.
-- It supports these databases:  SQL and MySQL
+- It supports both databases SQL and MySQL
 
 ## yaml structure
 - refer to https://github.com/samiemphamba/rdbcon/blob/main/db.yaml
@@ -39,7 +39,7 @@ install devtools
     # Close connection
     closeDb(con, db_type="SQL") #SQL or MySQL. You must specify
 ```
-- You may reference to the actual package name when calling openDb function
+- You may reference by the actual package name when calling openDb function
 ```r
     con <- rdbcon::openDb(file="Path/db.yaml", db_object="xxx")
 ```
