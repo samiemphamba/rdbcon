@@ -2,29 +2,22 @@
 % Please edit documentation in R/rdbcon.R
 \name{openDb}
 \alias{openDb}
-\title{Initialize db connection object}
+\title{Open connection}
 \usage{
-openDb(file, db_object)
+openDb(file, db_object, encrypted_params = F, key = "")
 }
 \arguments{
 \item{file}{Path to db config => valid yaml file}
 
 \item{db_object}{database object you want to connect to}
+
+\item{encrypted_params}{T if soap params are encrypted otherwise F}
+
+\item{key}{Secret key for encryption}
 }
 \value{
 A connection object as con
 }
 \description{
-This package uses yaml file to connect/close db using necessary packages.
-Supported databases:  SQL and MySQL
-Below is the structure of expected object in yaml
-db_name:
-dataconnection:
-driver: 'ODBC Driver 17 for SQL Server'
-server: 'xx.xx.xx.xx'
-uid: 'xxx'
-pwd: 'xx'
-port: 1433
-db_type: 'SQL'  or MySQL
-database: 'xxx'
+Open connection
 }

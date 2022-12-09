@@ -17,4 +17,3 @@ obj_name:
      port: "xxx" 
      db_type: 'MySQL' 
      database: 'xxx'
-
