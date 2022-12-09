@@ -18,7 +18,7 @@ obj_name:
      db_type: 'MySQL' 
      database: 'xxx'
  
-obj_name_encypted: 
+obj_name2: 
    dataconnection:    
      driver: 'LtzqouKCoYrDhyasvefINm1xkqGtG8JaigKmInI'
      server: 'sBZA/PS8MBEizQFfQoA=='
