@@ -17,3 +17,13 @@ obj_name:
      port: "xxx" 
      db_type: 'MySQL' 
      database: 'xxx'
+ 
+obj_name_encypted: 
+   dataconnection:    
+     driver: 'LtzqouKCoYrDhyasvefINm1xkqGtG8JaigKmInI'
+     server: 'sBZA/PS8MBEizQFfQoA=='
+     uid: 'TyymKqd31eQzn3Cxya'
+     pwd: 'fQyb3Cxya'
+     port: 'uEH0x9MAvIs7IC0='
+     db_type: 'E91lPgNGs5HPeleXw=='
+     database: '95SJoxiYzaPQdM271x68ik0='
