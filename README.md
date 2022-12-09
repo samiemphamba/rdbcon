@@ -9,22 +9,22 @@
 
 ## Usage
 - Run this command in Rstudio:
-
+```r
     - devtools::install_github("samiemphamba/rdbcon",dependencies=TRUE,force = TRUE)
     - library(rdbcon)
+
     - con <- openDb(file="Path/db.yaml", db_object="xxx")
     - You may reference to the actual package name when calling openDb function
         - con <- rdbcon::openDb(file="Path/db.yaml", db_object="xxx")
     - closeDb(con, db_type="SQL")
+    - encrypt_string(string="", key = "", pkey = NULL, ascii = TRUE) %>% print() #for encypting connection params in yaml
+```
 
 ## Dependacies:
-- Windows.
-    - install.packages("devtools")
-- Linux (ubuntu)
-    - install.packages("testthat") 
-    - install.packages("pkgload") 
-    - install.packages("devtools")
-
+install devtools
+```r
+    install.packages("devtools")
+```
 ## Preloaded dependancies
 - No need to install these packages. rdbcon loads them. However, they were built under R version 4.2.2
     - RODBC,
@@ -33,5 +33,6 @@
     - yaml,
     - config
     - RMariaDB
+    - safer
 
 

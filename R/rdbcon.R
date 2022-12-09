@@ -34,7 +34,9 @@ openDb <- function(file,db_object, encrypted_params = F, key = "") {
 
   soap <- config$dataconnection
   
-  if(soap$db_type == "SQL"){
+  db_type <- getDecryptParam(soap$db_type, encrypted_params, key);
+  
+  if(db_type == "SQL"){
     con_string <- paste(
       'Driver={'
       ,getDecryptParam(soap$driver, encrypted_params, key)
@@ -52,7 +54,7 @@ openDb <- function(file,db_object, encrypted_params = F, key = "") {
     con <- odbcDriverConnect(connection = con_string)
   }
   
-  if(soap$db_type == "MySQL"){
+  if(db_type == "MySQL"){
     con <- dbConnect(
       drv = RMariaDB::MariaDB()
       ,username = getDecryptParam(soap$uid, encrypted_params, key)
