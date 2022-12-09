@@ -27,7 +27,7 @@ install devtools
     - safer
 
 ## Usage
-- Run these commands in Rstudio or linux terminal:
+- Run these commands in Rstudio or linux (R-terminal):
 ```r
     devtools::install_github("samiemphamba/rdbcon",dependencies=TRUE,force = TRUE)
     library(rdbcon)
