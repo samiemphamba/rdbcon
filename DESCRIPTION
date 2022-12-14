@@ -16,4 +16,5 @@ Depends:
     odbc,
     yaml,
     config,
+    sodium,
     safer
